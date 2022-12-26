@@ -86,12 +86,10 @@ const handleSubmit = async (e) => {
     // messageDiv.innerHTML = "..."
     loader(messageDiv)
 
-    const response = await fetch('https://ai-uc55.onrender.com', {
+    const response = await fetch('https://codex-im0y.onrender.com/', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
-            'Authorization' : process.env.OPENAI_API_KEY,
-            Authorization : process.env.OPENAI_API_KEY,
         },
         body: JSON.stringify({
             prompt: data.get('prompt')
@@ -109,6 +107,7 @@ const handleSubmit = async (e) => {
         const err = await response.text()
 
         messageDiv.innerHTML = "Something went wrong"
+        alert(err)
     }
 }
 
