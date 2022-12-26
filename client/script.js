@@ -90,7 +90,8 @@ const handleSubmit = async (e) => {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
-            'Authorization' : "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"
+            'Authorization' : process.env.OPENAI_API_KEY,
+            Authorization : process.env.OPENAI_API_KEY,
         },
         body: JSON.stringify({
             prompt: data.get('prompt')
