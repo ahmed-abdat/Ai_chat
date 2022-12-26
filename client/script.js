@@ -1,3 +1,7 @@
+let serverURL = "https://ai-uc55.onrender.com"
+
+
+
 import bot from './assets/bot.svg'
 import user from './assets/user.svg'
 
@@ -27,6 +31,7 @@ function typeText(element, text) {
         if (index < text.length) {
             element.innerHTML += text.charAt(index)
             index++
+            chatContainer.scrollTop = chatContainer.scrollHeight;
         } else {
             clearInterval(interval)
         }
@@ -85,10 +90,11 @@ const handleSubmit = async (e) => {
 
     // messageDiv.innerHTML = "..."
     loader(messageDiv)
-
-    const response = await fetch('https://ai-uc55.onrender.com', {
+    // console.log(process.env.OPENAI_API_KEY)
+    const response = await fetch('http://localhost:5000', {
         method: 'POST',
         headers: {
+            Authorization: "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",
             'Content-Type': 'application/json',
         },
         body: JSON.stringify({
