@@ -1,7 +1,5 @@
 let serverURL = "https://ai-uc55.onrender.com"
 
-
-
 import bot from './assets/bot.svg'
 import user from './assets/user.svg'
 
