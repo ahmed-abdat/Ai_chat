@@ -1,5 +1,3 @@
-let serverURL = "https://ai-uc55.onrender.com"
-
 import bot from './assets/bot.svg'
 import user from './assets/user.svg'
 
@@ -89,7 +87,7 @@ const handleSubmit = async (e) => {
     // messageDiv.innerHTML = "..."
     loader(messageDiv)
     // console.log(process.env.OPENAI_API_KEY)
-    const response = await fetch('http://localhost:5000', {
+    const response = await fetch('https://ai-uc55.onrender.com', {
         method: 'POST',
         headers: {
             Authorization: "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",
