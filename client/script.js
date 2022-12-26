@@ -86,12 +86,12 @@ const handleSubmit = async (e) => {
 
     // messageDiv.innerHTML = "..."
     loader(messageDiv)
-    // console.log(process.env.OPENAI_API_KEY)
-    const response = await fetch('https://ai-uc55.onrender.com', {
+
+    const response = await fetch('http://localhost:5000', {
         method: 'POST',
         headers: {
-            Authorization: "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",
             'Content-Type': 'application/json',
+            Authorization: "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",
         },
         body: JSON.stringify({
             prompt: data.get('prompt')
@@ -108,7 +108,8 @@ const handleSubmit = async (e) => {
     } else {
         const err = await response.text()
 
-        messageDiv.innerHTML = "Something went wrong"
+        messageDiv.innerHTML = "هناك خطأ في الإتصال"
+        alert(err)
     }
 }
 
