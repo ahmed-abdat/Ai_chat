@@ -89,7 +89,7 @@ const handleSubmit = async (e) => {
     loader(messageDiv)
 
 
-    const response = await fetch('https://chate-app.onrender.com/', {
+    const response = await fetch('https://chate-ahmed.onrender.com', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
