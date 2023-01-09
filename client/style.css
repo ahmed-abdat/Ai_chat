@@ -162,6 +162,7 @@ button {
   justify-content: center;
   align-items: center;
   border: none;
+  outline: none;
   transition: all .5s ease-in-out;
   -webkit-transition: all .5s ease-in-out;
   -moz-transition: all .5s ease-in-out;
