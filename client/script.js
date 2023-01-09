@@ -6,7 +6,7 @@ const form = document.querySelector('form')
 const chatContainer = document.querySelector('#chat_container')
 
 let loadInterval
-
+document.querySelector("textarea").focus()
 function loader(element) {
     element.textContent = ''
 
