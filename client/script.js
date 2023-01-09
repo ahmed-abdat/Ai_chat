@@ -33,7 +33,6 @@ function typeText(element, text) {
             index++
         } else {
             clearInterval(interval)
-            textarea.focus()
             chatContainer.scrollTop = chatContainer.scrollHeight;
         }
     }, 20)
