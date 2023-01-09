@@ -22,6 +22,8 @@ function loader(element) {
     }, 300);
 }
 
+let btn = document.querySelector('button')
+
 function typeText(element, text) {
     let index = 0
 
@@ -31,6 +33,8 @@ function typeText(element, text) {
             index++
         } else {
             clearInterval(interval)
+            btn.removeAttribute('disabled')
+            textarea.removeAttribute('disabled')
             chatContainer.scrollTop = chatContainer.scrollHeight;
         }
     }, 20)
@@ -67,6 +71,7 @@ function chatStripe(isAi, value, uniqueId) {
 
 const handleSubmit = async (e) => {
     e.preventDefault()
+if(textarea.value.trim() !== ""){
     const data = new FormData(form)
 
     // user's chatstripe
@@ -74,7 +79,7 @@ const handleSubmit = async (e) => {
 
     // to clear the textarea input 
     form.reset()
-
+    btn.setAttribute('disabled',"")
     // bot's chatstripe
     const uniqueId = generateUniqueId()
     chatContainer.innerHTML += chatStripe(true, " ", uniqueId)
@@ -100,6 +105,7 @@ const handleSubmit = async (e) => {
     })
 
     textarea.blur()
+    textarea.setAttribute('disabled',"")
     clearInterval(loadInterval)
     messageDiv.innerHTML = " "
 
@@ -113,6 +119,8 @@ const handleSubmit = async (e) => {
         messageDiv.innerHTML = "هناك خطأ في الإتصال"
         console.log(JSON.stringify(err))
     }
+}
+
 }
 
 form.addEventListener('submit', handleSubmit)
