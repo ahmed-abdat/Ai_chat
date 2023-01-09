@@ -27,8 +27,8 @@ function typeText(element, text) {
     let interval = setInterval(() => {
         if (index < text.length) {
             element.innerHTML += text.charAt(index)
-            chatContainer.scrollTop = chatContainer.scrollHeight;
             index++
+            chatContainer.scrollTop = chatContainer.scrollHeight;
         } else {
             clearInterval(interval)
         }
@@ -105,7 +105,7 @@ const handleSubmit = async (e) => {
     if (response.ok) {
         const data = await response.json();
         const parsedData = data.bot.trim() // trims any trailing spaces/'\n' 
-        typeText(messageDiv, parsedData)
+        typeText(messageDiv, parsedData)       
     } else {
         const err = await response.text()
 
