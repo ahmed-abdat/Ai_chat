@@ -87,9 +87,8 @@ const handleSubmit = async (e) => {
 
     // messageDiv.innerHTML = "..."
     loader(messageDiv)
-    console.log(import.meta.env.VITE_OPENAI_API_KEY)
 
-    const response = await fetch('https://chat-locale.onrender.com/', {
+    const response = await fetch('https://chate-app.onrender.com', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -111,7 +110,7 @@ const handleSubmit = async (e) => {
         const err = await response.text()
 
         messageDiv.innerHTML = "هناك خطأ في الإتصال"
-        console.log(err)
+        console.log(JSON.stringify(err))
     }
 }
 
