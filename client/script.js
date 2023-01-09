@@ -112,7 +112,7 @@ const handleSubmit = async (e) => {
         messageDiv.innerHTML = "هناك خطأ في الإتصال"
         console.log(JSON.stringify(err))
     }
-    textarea.focus()
+    textarea.blur()
 }
 
 form.addEventListener('submit', handleSubmit)
