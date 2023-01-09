@@ -22,16 +22,18 @@ function loader(element) {
     }, 300);
 }
 
+
+
 function typeText(element, text) {
     let index = 0
 
     let interval = setInterval(() => {
         if (index < text.length) {
             element.innerHTML += text.charAt(index)
-            chatContainer.scrollTop = chatContainer.scrollHeight;
             index++
         } else {
             clearInterval(interval)
+            chatContainer.scrollTop = chatContainer.scrollHeight;
         }
     }, 20)
 }
