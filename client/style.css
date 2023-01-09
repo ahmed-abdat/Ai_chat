@@ -209,7 +209,6 @@ form img {
   color: #dcdcdc;
   font-size: 0.8rem;
   text-align: center;
-  margin-top: 0.4rem;
   font-weight: 500;
 }
 
@@ -217,7 +216,7 @@ form img {
   font-family: inherit;
   color: #eee;
   text-align: center;
-  font-size: 1.45rem;
+  font-size: 1.1rem;
 }
 .footer h1 span {
   color: #10a37f;
