@@ -99,6 +99,7 @@ const handleSubmit = async (e) => {
         })
     })
 
+    textarea.blur()
     clearInterval(loadInterval)
     messageDiv.innerHTML = " "
 
@@ -112,7 +113,6 @@ const handleSubmit = async (e) => {
         messageDiv.innerHTML = "هناك خطأ في الإتصال"
         console.log(JSON.stringify(err))
     }
-    textarea.blur()
 }
 
 form.addEventListener('submit', handleSubmit)
